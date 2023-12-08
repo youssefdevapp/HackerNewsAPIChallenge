@@ -36,7 +36,7 @@ The API should return an array of the best n stories as returned by the Hacker N
 #### Listing best stories descending order by score
 
 <details>
- <summary><code>GET</code> <code><b>/</b></code> <code>(gets all in-memory stub & proxy configs)</code></summary>
+ <summary><code>GET</code> <code><b>/</b></code> <code>(Listing best stories descending order by score)</code></summary>
 
 ##### Parameters
 
@@ -46,20 +46,9 @@ The API should return an array of the best n stories as returned by the Hacker N
 
 ##### Responses
 
-> +---------------+----------------------------------+-------------------------------------------+
 > | http code     | content-type                     | response                                  |
-> +===============+==================================+===========================================+
-> | `200`         | `application/json;charset=UTF-8` | `[ `                                      |
-> |               |                                  | > `{`                                     |
-> |               |                                  | >> `"title": "string",`                   |
-> |               |                                  | >> `"uri": "string",`                     |
-> |               |                                  | >> `"postedBy": "string",`                |
-> |               |                                  | >> `"time": "2023-12-08T10:17:45.657Z",`  |
-> |               |                                  | >> `"score": 0,`                          |
-> |               |                                  | >> `"commentCount": 0`                    |
-> |               |                                  | `}`                                       |
-> |               |                                  | `]`                                       | 
-> +---------------+----------------------------------+-------------------------------------------+
+> |---------------|----------------------------------|-------------------------------------------|
+> | `200`         | `application/json;charset=UTF-8` |  [ {"title": "string", "uri": "string", "postedBy": "string", "time": "2023-12-08T10:17:45.657Z", "score": 0, "commentCount": 0 }] | 
 
 ##### Example cURL
 
@@ -70,5 +59,7 @@ The API should return an array of the best n stories as returned by the Hacker N
 ## Enhancements:
 
 Use redis cache for share cache between differnts instances of API Rest.
+
 Call the update enpoint and check if there are changes in the cached stories, if yes update it.
+
 Add more unit testing cases
